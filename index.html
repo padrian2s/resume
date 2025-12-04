@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Paleacu - Senior MLOps Engineer & AI Architect</title>
+    <meta name="description" content="20+ years building production AI systems. Kubeflow pioneer since 2018. Architect of enterprise ML platforms serving Fortune 500 clients.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-subtle: #f9f9f9;
+            --text-primary: #1a1a1a;
+            --text-secondary: #333333;
+            --text-muted: #555555;
+            --accent-primary: #1a1a1a;
+            --accent-secondary: #333333;
+            --accent-warm: #333333;
+            --border-color: #cccccc;
+            --border-light: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px 50px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-primary);
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .contact-info span::before {
+            content: '|';
+            margin-right: 20px;
+            color: var(--border-color);
+        }
+
+        .contact-info span:first-child::before {
+            display: none;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            border-left: 3px solid var(--accent-primary);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            background: var(--bg-subtle);
+        }
+
+        .value-prop p {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+
+        .value-prop strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Key Metrics */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .metric {
+            text-align: center;
+            padding: 12px 8px;
+        }
+
+        .metric-value {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-primary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        /* Core Competencies */
+        .competencies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .competency {
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+        }
+
+        .competency.highlight {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            background: var(--bg-subtle);
+            font-weight: 600;
+        }
+
+        /* Experience Cards */
+        .experience-card {
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .experience-card:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .experience-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .experience-company {
+            font-size: 0.9rem;
+            color: var(--accent-secondary);
+            font-weight: 500;
+        }
+
+        .experience-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Project Blocks */
+        .project {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px dotted var(--border-light);
+        }
+
+        .project:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .project-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .project-domain {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .achievements li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-secondary);
+            border-radius: 50%;
+        }
+
+        .achievements li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tech-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 3px;
+            color: var(--text-muted);
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-light);
+        }
+
+        /* Innovation Spotlight */
+        .spotlight {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            position: relative;
+            background: var(--bg-subtle);
+        }
+
+        .spotlight-badge {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 12px;
+            border-radius: 3px;
+            border: 1px solid var(--border-color);
+        }
+
+        .spotlight h3 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+            margin-top: 6px;
+        }
+
+        .spotlight-subtitle {
+            font-size: 0.85rem;
+            color: var(--accent-secondary);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .spotlight p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        .spotlight-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .spotlight-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .spotlight-feature::before {
+            content: '+';
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .cert-item {
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            border-left: 2px solid var(--border-color);
+            background: var(--bg-subtle);
+        }
+
+        .cert-item strong {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .cert-item span {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Education */
+        .education-item {
+            padding: 12px 16px;
+            border-left: 2px solid var(--accent-primary);
+            background: var(--bg-subtle);
+        }
+
+        .education-item h3 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .education-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Awards */
+        .awards-list {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .award {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            background: var(--bg-subtle);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Two Column Layout for Bottom Sections */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .two-col section {
+            margin-bottom: 0;
+        }
+
+        /* Print Styles */
+        @media print {
+            @page {
+                margin: 0.6in 0.75in;
+                size: letter;
+            }
+
+            body {
+                font-size: 11pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .value-prop {
+                background: #f9f9f9 !important;
+                border-left: 3px solid #1a1a1a !important;
+            }
+
+            .spotlight {
+                background: #f9f9f9 !important;
+            }
+
+            .spotlight-badge {
+                background: #ffffff !important;
+                border: 1px solid #cccccc !important;
+            }
+
+            .experience-card {
+                break-inside: avoid;
+            }
+
+            .project {
+                break-inside: avoid;
+            }
+
+            .cert-grid, .two-col {
+                break-inside: avoid;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 32px 24px;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .spotlight-features {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid, .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .contact-info span::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Adrian Paleacu</h1>
+            <p class="tagline">Senior MLOps Engineer & AI Platform Architect</p>
+            <div class="contact-info">
+                <span><a href="mailto:adrian.paleacu@gmail.com">adrian.paleacu@gmail.com</a></span>
+                <span>+40 721 910 503</span>
+                <span>Timisoara, Romania</span>
+            </div>
+        </header>
+
+        <div class="value-prop">
+            <p>
+                I architect and build production ML systems that scale. With <strong>20+ years</strong> in software engineering and deep expertise in <strong>MLOps since Kubeflow 0.4 (2018)</strong>, I've designed AI platforms for Fortune 500 companies across healthcare, finance, identity, and telecom. I don't just deploy models - I build the entire ecosystem: from federated learning infrastructures to autonomous agentic coding environments. My systems handle <strong>100x Spark workloads</strong>, serve <strong>multi-tenant enterprise deployments</strong> with advanced security clearances, and turn ML research into production-grade solutions.
+            </p>
+        </div>
+
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-value">20+</div>
+                <div class="metric-label">Years Experience</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">7+</div>
+                <div class="metric-label">Years in MLOps</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">20+</div>
+                <div class="metric-label">AI Interfaces Built</div>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="section-title">Core Expertise</h2>
+            <div class="competencies">
+                <span class="competency highlight">Kubeflow Pioneer (since 2018)</span>
+                <span class="competency highlight">AI Platform Architecture</span>
+                <span class="competency highlight">Federated Learning</span>
+                <span class="competency">KFServing / KServe</span>
+                <span class="competency">Kubernetes & Operators</span>
+                <span class="competency">MLflow & Databricks</span>
+                <span class="competency">Nvidia Triton</span>
+                <span class="competency">Python / FastAPI / gRPC</span>
+                <span class="competency">Azure & AWS</span>
+                <span class="competency">Istio Service Mesh</span>
+                <span class="competency">Model Optimization (INT8/BERT)</span>
+                <span class="competency">PCI DSS / OWASP Security</span>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Innovation Spotlight</h2>
+            <div class="spotlight">
+                <span class="spotlight-badge">Current Project</span>
+                <h3>Autonomous Agentic Coding Environment (AACE)</h3>
+                <p class="spotlight-subtitle">Designing the Future of AI-Assisted Development</p>
+                <p>
+                    Building a comprehensive system architecture for autonomous AI-powered software development. This platform orchestrates specialized AI agents for different development tasks, featuring a 3-tier memory architecture (long-term knowledge, pattern library, episodic memory) that enables continuous learning and improvement.
+                </p>
+                <div class="spotlight-features">
+                    <div class="spotlight-feature">Multi-agent orchestration system</div>
+                    <div class="spotlight-feature">Knowledge base with vector search</div>
+                    <div class="spotlight-feature">Automated code generation & review</div>
+                    <div class="spotlight-feature">Policy guardian for AI safety</div>
+                    <div class="spotlight-feature">Ephemeral workspace management</div>
+                    <div class="spotlight-feature">Feedback loop for self-improvement</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Vue 3</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Kubernetes</span>
+                    <span class="tech-tag">Vector DB</span>
+                    <span class="tech-tag">MCP</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Senior MLOps Engineer / AI Solution Architect</div>
+                        <div class="experience-company">Self-employed (Consulting)</div>
+                    </div>
+                    <div class="experience-date">Mar 2021 - Present</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Modular AI Platform</div>
+                    <div class="project-domain">US Professional Services Company</div>
+                    <ul class="achievements">
+                        <li><strong>Architected and built 20+ integrated interfaces</strong> including Data Processing Dashboard, Federated Learning Dashboard, Model Deployment Console, and Agentic AI Workflow Designer</li>
+                        <li>Designed <strong>custom Kubernetes Operators</strong> to manage lifecycle automation of ML components across environments</li>
+                        <li>Delivered end-to-end solution covering UI/UX, backend, and infrastructure orchestration</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">VueJS</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">gRPC</span>
+                        <span class="tech-tag">K8s Operator SDK</span>
+                        <span class="tech-tag">Flower.AI</span>
+                        <span class="tech-tag">Argo CD</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Edge Computing Platform for Data Science</div>
+                    <div class="project-domain">Major Identity Provider</div>
+                    <ul class="achievements">
+                        <li>Developed <strong>cloud-agnostic platform handling 100x Spark workloads</strong> in Scala and Python</li>
+                        <li>Built <strong>federated learning across distributed nodes</strong> - enabling collaborative model training without moving data</li>
+                        <li>Implemented robust feature store and artifact storage ensuring data integrity and compliance</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">High-Scale Model Serving Infrastructure</div>
+                    <div class="project-domain">Fortune 500 Computer Hardware Company</div>
+                    <ul class="achievements">
+                        <li>Designed model serving infrastructure on Azure using <strong>AKS, Databricks, MLflow, KFServing, and Istio</strong></li>
+                        <li>Architected solutions with multiple backends: MLflow, BentoML, MLeap, <strong>Nvidia Triton</strong></li>
+                        <li><strong>Optimized BERT models using INT8 quantization</strong> for improved inference performance</li>
+                        <li>Established deployment methodologies for <strong>multi-tenant environments with cyber-security clearances</strong></li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">AI Match Platform</div>
+                    <div class="project-domain">Healthcare Workforce Development</div>
+                    <ul class="achievements">
+                        <li>Built AI-powered matching system for healthcare workforce training and credentialing platform</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Senior MLOps Engineer / AI Solution Architect</div>
+                        <div class="experience-company">Ness Digital Engineering</div>
+                    </div>
+                    <div class="experience-date">Jun 2016 - Mar 2021</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Ness AI Accelerator Platform</div>
+                    <ul class="achievements">
+                        <li>Designed <strong>cloud-agnostic AI accelerator platform</strong> for rapid client onboarding</li>
+                        <li>Developed AI reference architecture based on <strong>Google ML Rubric</strong> with model store, feature store, and MLOps best practices</li>
+                        <li>Managed deployments on-premises and across Azure and AWS</li>
+                        <li>Mentored engineers and conducted training sessions on MLOps tools</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Kubeflow</span>
+                        <span class="tech-tag">KFServing</span>
+                        <span class="tech-tag">Istio</span>
+                        <span class="tech-tag">CephFS</span>
+                        <span class="tech-tag">Nvidia DeepOps</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Real-Time ETA Prediction Platform</div>
+                    <div class="project-domain">Government of Ontario, Canada</div>
+                    <ul class="achievements">
+                        <li>Deployed AI platform on Kubernetes for <strong>real-time ETA predictions</strong></li>
+                        <li>Built scalable infrastructure supporting model training, deployment, and production inference</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Medical Imaging AI Platform</div>
+                    <div class="project-domain">Varian (Siemens Healthcare)</div>
+                    <ul class="achievements">
+                        <li>Designed platform for <strong>organ segmentation from MRI and DICOM imaging</strong></li>
+                        <li>Built scalable architecture aligned with Google ML Rubric including model and feature stores</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Kubeflow</span>
+                        <span class="tech-tag">KFServing</span>
+                        <span class="tech-tag">GlusterFS</span>
+                        <span class="tech-tag">Azure ARM</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">AI Platform on OpenShift</div>
+                    <div class="project-domain">Bell Canada (Telecom)</div>
+                    <ul class="achievements">
+                        <li>Defined full lifecycle AI platform integrating Spark with enterprise-grade security</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Finance Big Data Solution</div>
+                    <div class="project-domain">Warner Music Group</div>
+                    <ul class="achievements">
+                        <li>Built data pipelines processing <strong>millions of sales transactions and royalty payments</strong></li>
+                        <li>Designed scalable ingestion, transformation, and reconciliation for global financial reporting</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Next-Gen IoT Architecture</div>
+                    <div class="project-domain">GeoTogether (UK)</div>
+                    <ul class="achievements">
+                        <li><strong>Led technical team</strong> designing event-driven microservices for IoT edge devices</li>
+                        <li>Created real-time data streaming and cloud-native deployment architecture</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Senior Software Engineer</div>
+                        <div class="experience-company">IBM Global Technology Services Romania</div>
+                    </div>
+                    <div class="experience-date">Oct 2015 - Jun 2016</div>
+                </div>
+                <ul class="achievements">
+                    <li>Developed software solutions for <strong>BMW</strong> automotive systems using Java EE, Eclipse RCP</li>
+                    <li>Collaborated with international teams on the BNE product, improving performance and reliability</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Senior Software Engineer</div>
+                        <div class="experience-company">Paymint AG (Payment Industry)</div>
+                    </div>
+                    <div class="experience-date">Nov 2013 - Oct 2015</div>
+                </div>
+                <ul class="achievements">
+                    <li>Engineered <strong>fraud prevention and dispute management systems</strong> for major German payment processor</li>
+                    <li>Acted as <strong>Subject Matter Expert on PCI DSS and OWASP</strong> security compliance</li>
+                    <li>Optimized database queries and application performance in Agile environment</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Senior Software Engineer / Technical Leader</div>
+                        <div class="experience-company">ACI Worldwide (Banking & Payments)</div>
+                    </div>
+                    <div class="experience-date">Nov 2006 - Nov 2013</div>
+                </div>
+                <ul class="achievements">
+                    <li><strong>Engineering Lead</strong> for ACI Case Management System built on semantic web framework (Apache Jena)</li>
+                    <li>Led <strong>Proactive Risk Manager L3 Support Team serving 150+ banking clients</strong></li>
+                    <li>Modeled OWL 2.0 ontologies for knowledge representation</li>
+                    <li>Undertook onsite assignments in <strong>USA and Switzerland</strong></li>
+                    <li>SME on PCI DSS and OWASP for enterprise stack (WebSphere, WebLogic)</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Semantic Web</span>
+                    <span class="tech-tag">Apache Jena</span>
+                    <span class="tech-tag">OSGi</span>
+                    <span class="tech-tag">WebSphere</span>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer</div>
+                        <div class="experience-company">CoreCard (Banking & Payments)</div>
+                    </div>
+                    <div class="experience-date">Aug 2003 - Oct 2006</div>
+                </div>
+                <ul class="achievements">
+                    <li>Built payment products: Card Management System, Collections, Sales Incentive Management</li>
+                    <li>Contributed to platform handling Private Label, Prepaid, Fleet, and credit card payments</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <strong>Machine Learning</strong>
+                    <span>Stanford University / Coursera (2016)</span>
+                </div>
+                <div class="cert-item">
+                    <strong>Data Science Specialization</strong>
+                    <span>Johns Hopkins / Coursera (8 courses)</span>
+                </div>
+                <div class="cert-item">
+                    <strong>Hadoop Platform & Applications</strong>
+                    <span>Coursera (2016)</span>
+                </div>
+                <div class="cert-item">
+                    <strong>Go Programming Specialization</strong>
+                    <span>Coursera (3 courses)</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="two-col">
+            <section>
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3>B.Sc. Computer Science</h3>
+                    <p>Tibiscus University, Timisoara (2000-2004)</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Recognition</h2>
+                <div class="awards-list">
+                    <div class="award">ACI Award of Distinction 2010</div>
+                    <div class="award">ACI Q2 AD Award 2008</div>
+                </div>
+            </section>
+        </div>
+
+        <section>
+            <h2 class="section-title">Conferences & Events</h2>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                AI World Summit 2018 (Amsterdam) &nbsp;|&nbsp; Google Cloud Days 2019 (Bucharest) &nbsp;|&nbsp;
+                RAAI 2019 &nbsp;|&nbsp; SYNASC 2019 &nbsp;|&nbsp; Devoxx 2010 (Belgium)
+            </p>
+        </section>
+
+        <footer>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">
+                References available upon request &nbsp;|&nbsp; English - Business Fluent &nbsp;|&nbsp; Timisoara, Romania
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
